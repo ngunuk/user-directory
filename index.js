@@ -6,12 +6,16 @@ const handleSubmit = function(ev) {
   const f = ev.target
   const userName = f.userName.value
   const age = f.age.value
+  const favoriteColor = f.favoriteColor.value
 
   const p = document.createElement('p')
   p.textContent = `${userName}, ${age}`
+  p.style.backgroundColor = favoriteColor
 
   users.appendChild(p)
 
   f.reset()
   f.userName.focus()
 }
+
+form.addEventListener('submit', handleSubmit)
