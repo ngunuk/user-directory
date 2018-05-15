@@ -1,17 +1,14 @@
-const button = document.querySelector('button.greeting')
+const form = document.querySelector('#userForm')
 
-button.addEventListener('click', changeText)
-    function changeText(ev){
-    ev.target.textContent = 'Clickity Click'
-    }
+const handleSubmit = function(ev) {
+  ev.preventDefault()
+  const users = document.querySelector('#users')
+  const f = ev.target
+  const userName = f.userName.value
+  users.innerHTML += '<p>' + userName + '</p>'
 
-function myFunction(){
-    document.querySelector(".header1").innerHTML = "The Heading has Changed!"
+  f.userName.value = ''
 }
 
-
-function newText(){
-    var x = document.getElementById("writeText").value;
-    document.getElementById("header3").innerHTML = x;
-}
+form.addEventListener('submit', handleSubmit)
 
