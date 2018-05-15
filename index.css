@@ -1,3 +1,10 @@
 body{
     font-family: sans-serif;
+    background-color: burlywood;
 }
+
+button.greeting {
+    border-style: double;
+    border-width: thick;
+    border-color: crimson;
+    }
