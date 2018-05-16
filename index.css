@@ -10,9 +10,8 @@ button.greeting {
     }
 input {
     padding: 10px 10px;
-    margin: 0px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
+    margin: 20px 10px;
+    border: 2px dashed red;
     border-radius: 4px;
     }
 input:focus {
