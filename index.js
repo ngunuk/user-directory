@@ -1,11 +1,24 @@
-const form = document.querySelector('#userForm')
+const form = document.querySelector('#userForm')    //saved into "form"
 
-const handleSubmit = function(ev) {
+const handleSubmit = function(ev) {     //function recieved event as an argument
   ev.preventDefault()
   const f = ev.target
   const userName = f.userName.value
   const age = f.age.value
   const favoriteColor = f.favoriteColor.value
+
+  const renderColor = function(){
+
+    const newDiv = document.createElement('div')
+    newDiv.style.height = '6rem'
+    newDiv.style.width = '3rem'
+    newDiv.style.backgroundColor = favoriteColor
+    return newDiv;
+    
+    }
+
+ 
+
 
   const nameItem = document.createElement('li')
   nameItem.textContent = `Name: ${userName}`
