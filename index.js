@@ -6,9 +6,16 @@ const handleSubmit = function(ev) {     //function recieved event as an argument
   const userName = f.userName.value
   const age = f.age.value
   const favoriteColor = f.favoriteColor.value
+    renderlist(userName,age,favoriteColor)
+ 
+ 
+    f.reset()
+  f.userName.focus()
+    }
+    
 
-  const renderColor = function(){
-
+  
+    const renderColor = function(favoriteColor){
     const newDiv = document.createElement('div')
     newDiv.style.height = '6rem'
     newDiv.style.width = '3rem'
@@ -16,11 +23,30 @@ const handleSubmit = function(ev) {     //function recieved event as an argument
     return newDiv;
     
     }
+    const renderListItem = function(entry,flag){
+    const list = document.createElement('li')
+    if(flag==1){
+        list.textContent = `Name: ${entry}` 
+    }
+    else if(flag==2){
+        list.textContent = `Age: ${entry}`
+    }
+    else if(flag ==3){
+        list.textContent =`Color: `
+        list.appendChild(renderColor(entry));
+    }
+    return list;
+    }
 
- 
+    const renderlist = function(userName,age,favoriteColor){
+        const ul = document.createElement('ul')
+        ul.appendChild(renderListItem(userName,1))
+        ul.appendChild(renderListItem(age,2))
+        ul.appendChild(renderListItem(favoriteColor,3))
+        users.appendChild(ul)
+    }
 
-
-  const nameItem = document.createElement('li')
+  /*const nameItem = document.createElement('li')
   nameItem.textContent = `Name: ${userName}`
 
   const ageItem = document.createElement('li')
@@ -42,9 +68,6 @@ const handleSubmit = function(ev) {     //function recieved event as an argument
 
   const users = document.querySelector('#users')
   users.appendChild(list)
-
-  f.reset()
-  f.userName.focus()
-}
+*/
 
 form.addEventListener('submit', handleSubmit)
