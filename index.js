@@ -1,30 +1,30 @@
 const form = document.querySelector('#userForm')    //saved into "form"
 
 const handleSubmit = function(ev) {     //function recieved event as an argument
-  ev.preventDefault()
-  const f = ev.target
-  const userName = f.userName.value
+  ev.preventDefault()                   //not refrsh and reset everything
+  const f = ev.target                   //access to the form you submitted
+  const userName = f.userName.value        //values from the form
   const age = f.age.value
   const favoriteColor = f.favoriteColor.value
-    renderlist(userName,age,favoriteColor)
+    renderlist(userName,age,favoriteColor)      //call the function
  
  
-    f.reset()
-  f.userName.focus()
+    f.reset()           //clear all input
+  f.userName.focus()       //goes back to the userName input
     }
     
 
   
-    const renderColor = function(favoriteColor){
-    const newDiv = document.createElement('div')
-    newDiv.style.height = '6rem'
+    const renderColor = function(favoriteColor){    //function created with parameter as favorite color
+    const newDiv = document.createElement('div')    //newDiv created
+    newDiv.style.height = '6rem'                    //style
     newDiv.style.width = '3rem'
     newDiv.style.backgroundColor = favoriteColor
-    return newDiv;
+    return newDiv;                                  //return newDiv
     
     }
-    const renderListItem = function(entry,flag){
-    const list = document.createElement('li')
+    const renderListItem = function(entry,flag){    //function created for the listed items
+    const list = document.createElement('li')       //distinguish between the name,age,favcolor
     if(flag==1){
         list.textContent = `Name: ${entry}` 
     }
@@ -35,12 +35,12 @@ const handleSubmit = function(ev) {     //function recieved event as an argument
         list.textContent =`Color: `
         list.appendChild(renderColor(entry));
     }
-    return list;
+    return list;                //return list
     }
 
-    const renderlist = function(userName,age,favoriteColor){
-        const ul = document.createElement('ul')
-        ul.appendChild(renderListItem(userName,1))
+    const renderlist = function(userName,age,favoriteColor){            //function created
+        const ul = document.createElement('ul')                 //creat the actual list
+        ul.appendChild(renderListItem(userName,1))                  //add item to list
         ul.appendChild(renderListItem(age,2))
         ul.appendChild(renderListItem(favoriteColor,3))
         users.appendChild(ul)
