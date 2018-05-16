@@ -1,19 +1,11 @@
-body{
-    font-family: sans-serif;
-    background-color: burlywood;
+
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+body {
+  font-family: 'Slabo 27px', serif;
 }
 
-button.greeting {
-    border-style: double;
-    border-width: thick;
-    border-color: crimson;
-    }
-input {
-    padding: 10px 10px;
-    margin: 20px 10px;
-    border: 2px dashed red;
-    border-radius: 4px;
-    }
-input:focus {
-    background-color:cyan;
-    }
+main {
+  display: flex;
+  justify-content: space-around;
+}
