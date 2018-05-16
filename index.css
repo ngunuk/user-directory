@@ -23,3 +23,7 @@ body {
   dl > li {
       list-style: none;
   }
+
+  dl:nth-of-type(even){
+      background-color: aquamarine;
+  }
