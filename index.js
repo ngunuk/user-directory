@@ -10,13 +10,31 @@ function renderColor(color) {
 
 function renderListItem(label, value) {
   const item = document.createElement('li')
-  item.textContent = `${label}: `
+
+  const term = document.createElement('dt')
+  term.textContent = label
+
+  const description = document.createElement('dd')
+
   try {
-    item.appendChild(value)
+    description.appendChild(value)
   } catch(e) {
-    item.textContent += value
+    description.textContent += value
   }
+
+  item.appendChild(term)
+  item.appendChild(description)
   return item
+}
+
+function renderList(data) {
+  const list = document.createElement('dl')
+  const labels = Object.keys(data)
+  labels.forEach(label => {
+    const item = renderListItem(label, data[label])
+    list.appendChild(item)
+  })
+  return list
 }
 
 const handleSubmit = function(ev) {
@@ -28,17 +46,8 @@ const handleSubmit = function(ev) {
     favoriteColor: renderColor(f.favoriteColor.value),
   }
 
-  const list = document.createElement('ul')
-
-  const labels = Object.keys(user)
-  labels.forEach(function(label) {
-    const item = renderListItem(label, user[label])
-    list.appendChild(item)
-  })
-
-
   const users = document.querySelector('#users')
-  users.appendChild(list)
+  users.appendChild(renderList(user))
 
   f.reset()
   f.userName.focus()
