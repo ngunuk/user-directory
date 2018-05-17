@@ -1,29 +1,92 @@
+body{
+    font-family: Tahoma;
+    color: #444;
+    letter-spacing: 1px;
+    margin: 0px auto;
+    }
+    #crying{
+        width: 50%;
+        margin: 1px auto;
+        border-radius: 6px;
+        box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+        box-sizing: border-box;
+        padding:0px;
+        border: 1px solid lightgray;
+        max-height: 50%;
+    }
+    
+#searchMovies{
+    text-align: right;
+    margin: 0px auto;
+}
+#pageTitle{
+    background: #eee ;
+    padding: 2px 0;
+    margin: 1px;
 
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+}
 
-body {
-    font-family: 'Slabo 27px', serif;
-  }
-  
-  main {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  #userForm {
-    background-color: #eeeeee;
-    padding: 1rem;
-    border: 1px solid #e3e3e3;
-  }
-  
-  label {
+#pageTitle h1, #pageTitle p{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#pageTitle input{
+    margin: 5px auto;
+    padding: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #444;
+}
+
+#moviesList, #addMovies{
+    margin: 10px;
+}
+
+#moviesList li{
+    padding: 5px;
+    margin: 10px 5px;
+}
+
+.delete{
+    padding: 6px;
+    float: right;
+    cursor: pointer;
+    color:red;
+    background-color:none;
+    border: 1px dashed cornsilk;
+}
+
+.delete:hover{
+    background: rgb(15, 6, 6);
+}
+#addMovies button{
+    cursor: pointer;
+}
+#addMovies{
+    width: 400px;    
+    margin: 0 auto;
+    text-align:center;
+}
+
+#addMovies input{
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid royalblue;
+    font-size: 16px;
+    width: 300px;
+}
+
+#addMovies:after{
+    content: '';
     display: block;
-  }
+    clear: both;
+}
 
-  dl > li {
-      list-style: none;
-  }
-
-  dl:nth-of-type(even){
-      background-color: aquamarine;
-  }
+h2 {
+    display: block;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
